@@ -10,6 +10,7 @@ body {
   background-color: #0f172a;
   color: #e2e8f0;
   line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
 header {
@@ -17,6 +18,10 @@ header {
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
 }
 
 .logo {
@@ -32,6 +37,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .nav-links {
@@ -48,6 +54,20 @@ header {
 
 .nav-links a:hover {
   color: #6366f1;
+}
+
+#darkModeToggle {
+  padding: 5px 10px;
+  background: #6366f1;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#darkModeToggle:hover {
+  background: #4f46e5;
 }
 
 #hero {
@@ -88,6 +108,28 @@ section {
   border-radius: 6px;
 }
 
+.skill {
+  margin: 15px 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.skill-bar {
+  background: #0f172a;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 12px;
+}
+
+.skill-level {
+  height: 100%;
+  background: #6366f1;
+  width: 0;
+  transition: width 1s;
+}
+
 .project-card {
   background: #1e293b;
   margin: 10px auto;
@@ -95,6 +137,12 @@ section {
   padding: 1rem;
   border-radius: 8px;
   text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 footer {
@@ -102,4 +150,47 @@ footer {
   background: #1e293b;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #6366f1;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  z-index: 100;
+  transition: background 0.3s;
+}
+
+#backToTop:hover {
+  background: #4f46e5;
+}
+
+/* Light mode styles */
+body.light-mode {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+body.light-mode header,
+body.light-mode footer,
+body.light-mode .project-card,
+body.light-mode .skills-list li {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+body.light-mode .btn {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+body.light-mode .btn:hover {
+  background-color: #6366f1;
 }
