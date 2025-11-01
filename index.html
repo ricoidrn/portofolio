@@ -1,103 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rico Indrawan | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/script.js" defer></script>
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">Rico<span>Indrawan</span></h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="darkModeToggle">🌙</button>
-    </nav>
-  </header>
+<section id="projects">
+  <h2>Projects</h2>
 
-  <section id="hero">
-    <h2>Hello, I'm <span>Rico Indrawan</span></h2>
-    <p>Frontend Developer | Passionate about clean design and user experience.</p>
-    <a href="#projects" class="btn">View Projects</a>
-  </section>
+  <!-- Filter buttons -->
+  <div class="filter-buttons">
+    <button class="filter-btn" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="php">PHP</button>
+  </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m a Computer Engineering graduate with experience in frontend development.
-      I love turning designs into responsive and interactive websites.
-    </p>
-  </section>
+  <!-- Projects -->
+  <div class="project-card" data-category="php" data-title="Hotel Booking App" data-description="Simple hotel booking web app built using PHP & MySQL.">
+    <h3>Hotel Booking App</h3>
+    <p>Simple hotel booking web app built using PHP & MySQL.</p>
+  </div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skill">
-      <p>HTML</p>
-      <div class="skill-bar">
-        <div class="skill-level" data-width="90%"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <p>CSS</p>
-      <div class="skill-bar">
-        <div class="skill-level" data-width="85%"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <p>JavaScript</p>
-      <div class="skill-bar">
-        <div class="skill-level" data-width="80%"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <p>React</p>
-      <div class="skill-bar">
-        <div class="skill-level" data-width="70%"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <p>Tailwind</p>
-      <div class="skill-bar">
-        <div class="skill-level" data-width="75%"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <p>Git & GitHub</p>
-      <div class="skill-bar">
-        <div class="skill-level" data-width="80%"></div>
-      </div>
-    </div>
-  </section>
+  <div class="project-card" data-category="web" data-title="Portfolio Website" data-description="Personal portfolio built with HTML, CSS, and JavaScript.">
+    <h3>Portfolio Website</h3>
+    <p>Personal portfolio built with HTML, CSS, and JavaScript.</p>
+  </div>
+</section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Hotel Booking App</h3>
-      <p>Simple hotel booking web app built using PHP & MySQL.</p>
-    </div>
-    <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>Personal portfolio built with HTML, CSS, and JavaScript.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ricoindrawan@example.com">ricoindrawan@example.com</a></p>
-    <p>LinkedIn: <a href="#">linkedin.com/in/ricoindrawan</a></p>
-    <p>GitHub: <a href="https://github.com/rcdrn">github.com/rcdrn</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Rico Indrawan. All rights reserved.</p>
-  </footer>
-
-  <button id="backToTop">↑</button>
-</body>
-</html>
+<!-- Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDescription"></p>
+  </div>
+</div>

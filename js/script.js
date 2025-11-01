@@ -46,3 +46,42 @@ const toggle = document.getElementById("darkModeToggle");
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
 });
+
+// Project modal
+const modal = document.getElementById("projectModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const closeBtn = document.querySelector(".modal .close");
+
+document.querySelectorAll(".project-card").forEach(card => {
+  card.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalTitle.textContent = card.dataset.title;
+    modalDescription.textContent = card.dataset.description;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+});
+
+// Project filter
+const filterBtns = document.querySelectorAll(".filter-btn");
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filter = btn.dataset.filter;
+    document.querySelectorAll(".project-card").forEach(card => {
+      if (filter === "all" || card.dataset.category === filter) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
